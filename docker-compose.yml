@@ -15,10 +15,13 @@ services:
     volumes:
       - db_data:/var/lib/mysql
     networks:
+      - miniapp-network
       - share-network
 volumes:
   db_data:
 
 networks:
+  miniapp-network:
+    external: true
   share-network:
     external: true
